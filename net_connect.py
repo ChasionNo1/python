@@ -36,3 +36,7 @@ def deal_net():
         p = input('输入登陆密码:')
         result = login(u, d, p)
         return result.content.decode('unicode-escape')
+
+
+if __name__ == '__main__':
+    print(deal_net())
