@@ -25,3 +25,14 @@ def login(user, domain, psw):
             'enablemacauth': '0'}
     response = requests.post(url, data=data, headers=headers)
     return response
+
+
+def deal_net():
+    if check_net() == '网络已经连接':
+        return '网络已经连接'
+    else:
+        u = input('输入账号：')
+        d = input('输入运营商(移动CMCC,联通Unicom,电信ChinaNet):')
+        p = input('输入登陆密码:')
+        result = login(u, d, p)
+        return result.content.decode('unicode-escape')
